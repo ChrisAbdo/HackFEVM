@@ -3,16 +3,7 @@ import Image from "next/image";
 import Web3 from "web3";
 import { useEffect, useState } from "react";
 
-import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
-
 const Home = () => {
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
-  const { disconnect } = useDisconnect();
-
   const [web3, setWeb3] = useState(null);
   const [account, setAccount] = useState(null);
 
